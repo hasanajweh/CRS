@@ -1,0 +1,11 @@
+<!-- registration/templates/registration/course_schedule.html -->
+{% extends 'registration/base.html' %}
+
+{% block content %}
+    <h2>Schedule for {{ course.name }}</h2>
+    <p><strong>Code:</strong> {{ course.code }}</p>
+    <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+    <p><strong>Days:</strong> {{ schedule.days }}</p>
+    <p><strong>Time:</strong> {{ schedule.startTime }} - {{ schedule.endTime }}</p>
+    <p><strong>Room:</strong> {{ schedule.roomNo }}</p>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "registration/base.html" %}
+
+{% block content %}
+    <div class="container mt-3">
+        <h2 class="mb-3">Search Results</h2>
+        <p>Searching for: "<strong>{{ query }}</strong>"</p>
+        {% if courses %}
+            <div class="list-group">
+                {% for course in courses %}
+                    <!-- Updated link to point to the 'course_schedule' view -->
+                    <a href="{% url 'course_schedule' course.id %}" class="list-group-item list-group-item-action">
+                        {{ course.name }} ({{ course.code }}) by {{ course.instructor }}
+                    </a>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-warning" role="alert">
+                No courses found.
+            </div>
+        {% endif %}
+        <a href="{% url 'home' %}" class="btn btn-primary mt-3">Back to home</a>
+    </div>
+{% endblock %}
