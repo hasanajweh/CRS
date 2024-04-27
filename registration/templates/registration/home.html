@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-<div class="hero-section" style=; height: 100vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; flex-direction: column;">
-    <h1 style="color: white; font-size: 4em; text-shadow: 2px 2px 4px #000;">Register and Get Started!</h1>
-    <p style="color: white; margin-bottom: 2em; font-size: 1.5em;">Welcome to our Course Registration System!</p>
+<div class="hero-section">
+    <h1>Welcome to our Course Registration System!</h1>
+        <p>Explore a wide variety of courses offered by distinguished instructors and take the next step in your educational journey with us.</p>
+
+      </div>
+
     <form action="{% url 'course_search' %}" method="get">
         {% csrf_token %}
         <input type="text" name="query" placeholder="Enter the instructor name, course name or no." required class="form-control mr-2">
-        <button type="submit" class="btn btn-primary"  >Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
     </form>
-    
-
 </div>
+
 {% endblock %}

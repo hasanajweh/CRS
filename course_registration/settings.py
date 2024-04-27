@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'course_registration.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  
+        'NAME': 'django',  
+        'USER': 'ajweh',  
+        'PASSWORD': 'ajweh', 
+        'HOST': '127.0.0.1', 
+        'PORT': '3306',  
     }
 }
 
@@ -119,10 +123,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/static/'  # URL endpoint for static files
+STATIC_URL = '/static/' 
 
 STATICFILES_DIRS = [
-    BASE_DIR / "registration/static",  # Directory where static files are stored
+    BASE_DIR / "registration/static", 
 ]
 
 # Default primary key field type
@@ -132,3 +136,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'registration.CustomUser'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'user_login'
+
+
+
+DEBUG = True
